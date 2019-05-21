@@ -18,6 +18,7 @@ from sklearn.cluster import MeanShift, KMeans
 from sklearn import preprocessing,  model_selection  # before it was cross_validation
 import pandas as pd
 import matplotlib.pyplot as plt
+from tqdm import tqdm
 
 import xlrd # This one not needed but it is used within the sklearn and pandas.
 '''
@@ -49,7 +50,7 @@ def handle_non_numerical_data(df):
     # handling non-numerical data: must convert.
     columns = df.columns.values
 
-    for column in columns:
+    for column in tqdm(columns):
         text_digit_vals = {}
         def convert_to_int(val):
             return text_digit_vals[val]
@@ -92,5 +93,20 @@ original_df['cluster_group'] = np.nan
 for i in range(len(X)):
     original_df['cluster_group'].iloc[i] = labels[i] # iloc is a reference to the dataframe in pandas refer to the row
 
+n_clusters_ = len(np.unique(labels))
 
+survival_rates = {}
+for i in tqdm(range(n_clusters_)):
+    temp_df = original_df[(original_df['cluster_group'] == float(i))]
+    survival_cluster = temp_df[(temp_df['survived'] == 1)]
+    survival_rate = len(survival_cluster)/len(temp_df)
+    survival_rates[i] = survival_rate
 
+print(survival_rates)
+
+print(original_df[ (original_df['cluster_group']==1) ])
+print(original_df[ (original_df['cluster_group']==0) ].describe())
+print(original_df[ (original_df['cluster_group']==2) ].describe())
+cluster_0 = (original_df[ (original_df['cluster_group']==0) ])
+cluster_0_fc = (cluster_0[ (cluster_0['pclass']==1) ])
+print(cluster_0_fc.describe())

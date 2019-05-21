@@ -1,4 +1,6 @@
 {
     "python.pythonPath": "Gh1Py37Anconda/bin/python",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
 
 }
