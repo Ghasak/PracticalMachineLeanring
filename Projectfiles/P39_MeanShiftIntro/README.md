@@ -1,15 +1,11 @@
-# Practical Machine Learning -
-## Starting Point for this project.
-Starting here from Mean Shift Into.-Practical Machine Learning Tutorial with python p.39.
-
+# Practical Machine Learning
+## Mean Shift Intro Tutorial with Python p.39.
+More details here:
+https://pythonprogramming.net/hierarchical-clustering-mean-shift-machine-learning-tutorial/.
+Lets say we are having three datapoints and we want to take the mean (using the radius bandwidth). We take the mean of several points based on the clustering.
 ## - Lessons Progress
-Here will continue our Machine-Learning Class that we we have already developed in the past. The programs here support Machine Learning with several methods such as:
-### Machine learning Methods
-* K-Means
-* Nearest distance
-* Support Vector machine
-* Mean Shift
-
+Here is the results:
+![]()
 
 #
 ## Authors
