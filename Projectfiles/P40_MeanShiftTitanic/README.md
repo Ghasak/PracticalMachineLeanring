@@ -1,6 +1,11 @@
 # Practical Machine Learning
-## Mean Shift Intro Tutorial with Python p.39.
-Lets say we are having three datapoints and we want to take the mean (using the radius bandwidth). We take the mean of several points based on the clustering.
+## Mean Shift Intro Tutorial with Python p.40.
+The script file is working in both intractive JupyterNote and IpythonNote. also its working from the terminal itself. the only problem that current vscode cant run the script file directly from the within the app itself. the file is located here:
+https://pythonprogramming.net/mean-shift-titanic-dataset-machine-learning-tutorial/
+
+## Probelm with VSCode
+I have fixed a problem that I faced here by adding a folder
+
 ## - Lessons Progress
 Here will continue our Machine-Learning Class that we we have already developed in the past. The programs here support Machine Learning with several methods such as:
 #
