@@ -110,3 +110,11 @@ print(original_df[ (original_df['cluster_group']==2) ].describe())
 cluster_0 = (original_df[ (original_df['cluster_group']==0) ])
 cluster_0_fc = (cluster_0[ (cluster_0['pclass']==1) ])
 print(cluster_0_fc.describe())
+
+
+
+
+
+
+
+
