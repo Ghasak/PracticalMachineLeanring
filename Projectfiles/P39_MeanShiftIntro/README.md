@@ -5,7 +5,7 @@ https://pythonprogramming.net/hierarchical-clustering-mean-shift-machine-learnin
 Lets say we are having three datapoints and we want to take the mean (using the radius bandwidth). We take the mean of several points based on the clustering.
 ## - Lessons Progress
 Here is the results:
-![]()
+![](https://github.com/Ghasak/PracticalMachineLeanring/blob/master/Projectfiles/P39_MeanShiftIntro/resources/Screen%20Shot%202019-05-21%20at%2017.06.09.png)
 
 #
 ## Authors
