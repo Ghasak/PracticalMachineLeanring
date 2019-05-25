@@ -89,7 +89,7 @@ class Mean_Shift:
 
 
 
-clf = Mean_Shift()
+clf = Mean_Shift(radius= 4)
 clf.fit(X)
 
 centroids = clf.centroids
