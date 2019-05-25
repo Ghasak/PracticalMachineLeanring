@@ -21,6 +21,18 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm
 
 import xlrd # This one not needed but it is used within the sklearn and pandas.
+# -----------------------------------------------------
+# Installing packages -
+# -----------------------------------------------------
+import datetime as dt
+import matplotlib
+matplotlib.use('TkAgg')
+import matplotlib.pyplot as plt
+from matplotlib import style
+import pandas as pd
+
+
+style.use('ggplot')
 '''
 Pclass Passenger Class (1 = 1st; 2 = 2nd; 3 = 3rd)
 survival Survival (0 = No; 1 = Yes)
@@ -39,7 +51,18 @@ home.dest Home/Destination
 '''
 # https://pythonprogramming.net/static/downloads/machine-learning-data/titanic.xls
 # xls = pd.ExcelFile('titanic.xls')
-df = pd.read_excel('titanic.xls')
+
+# Prepare a directory file for our current file
+import os
+import os.path as path
+ResourceDir = os.getcwd()
+# ---------------------------------------------------
+# Create a directory to export data to it.
+# if not os.path.exists(ResourceDir+"/resources/stock_dfs/"):
+#         os.makedirs(ResourceDir+"/resources/stock_dfs/")
+# ---------------------------------------------------
+
+df = pd.read_excel(ResourceDir+'/resources/titanic.xls')
 
 original_df = pd.DataFrame.copy(df)
 df.drop(['body','name'], 1, inplace=True)
