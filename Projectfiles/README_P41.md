@@ -14,8 +14,7 @@ After apply our algorithm of Mean-Shift we obtain
 ![](./output_images/P-2.png)
 
 ## - My Note
-Here will continue our Machine-Learning Class that we we have already developed in the past. The programs here support Machine Learning with several methods such as:
-
+Here will continue our Machine-Learning Class that we we have already developed in the past. Mean-Shift algorithm will be developed from scratch, we have used the **band_width** or as we have refer to it here as **radius** to reflect the distance among the groups of being accepted.
 #
 
 ## Acknowledgments
