@@ -10,7 +10,7 @@ To run this file use
 python ~/3_PracticalMachineLearning/Projectfiles/P42_MeanShiftDynamicBandwidth.py
 ```
 
-![](./output_images/P-X.png)
+![](./output_images/P42-1.png)
 
 
 ## - My Note

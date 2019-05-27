@@ -1,5 +1,3 @@
-
-
 # ==================================================================
 ## {Description} -Mean Shift Intro - Practical Machine Learning Tutorial with Python p.41
 # ==================================================================
