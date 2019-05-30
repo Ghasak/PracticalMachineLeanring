@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cdc952df-9136-445d-9946-bfc32b4c1237" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1251233561">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="547407165">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="11" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="5" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.4" value="2" />
+          <entry key="project.open.time.5" value="2" />
+          <entry key="project.opened" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="ipynb" value="2" />
+          <entry key="pickle" value="2" />
+          <entry key="png" value="1" />
+          <entry key="py" value="59" />
+          <entry key="txt" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="IPNB" value="2" />
+          <entry key="Image" value="1" />
+          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="Python" value="59" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="6484" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="6484" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/[36] k Means with Titanic Dataset - Practical Machine Learning Tutorial.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2816">
+              <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>linalg</find>
+      <find>\# Here we will use the support vector machine\nimport numpy as np\nimport matplotlib\n\nmatplotlib\.use\(\'TkAgg\'\)\nimport matplotlib\.pyplot as plt\nfrom matplotlib import style\n\nstyle\.use\(\'ggplot\'\)\n\n\n\# Lets try to write the basic of support vector machine\n\# we will use a class of several objects and methods\n\nclass Support_Vector_Machine\:\n    \# when you call a class to run\, none of the methods will run except the __init__ one\n    def __init__\(self\, visualization\=True\)\:  \# visualization is used with a boolean variable\.\n        self\.visualization \= visualization\n        self\.colors \= \{1\: \'r\'\, \-1\: \'b\'\}  \# Color of the classes\, one red for \+1 and blue of \-1\n        if self\.visualization\:\n            self\.fig \= plt\.figure\(\)\n            self\.ax \= self\.fig\.add_subplot\(1\, 1\, 1\)  \# simply add a subplot as a grid to for the plotting\n\n    \# now we will define the method of fitting \(notice you can add pass in the end of the method\n    \# in case you don\'t know what to add yet\,\n    \# This method \(fit\) actually is the training of the data\n    def fit\(self\, data\)\:\n        self\.data \= data\n        \# here we will create a dictionary with \|\|w\|\|\:\[w\,b\] see the theory to understand more\n        \# first we will create an empty dictionary and later we will populate it with these information\n        opt_dict \= \{\}\n\n        \# as we learn before this is the transforms to check read the theory\n        \# each time a vector is created we check with the transform here\n        transforms \= \[\[1\, 1\]\,\n                      \[\-1\, 1\]\,\n                      \[\-1\, \-1\]\,\n                      \[1\, \-1\]\]\n        \# lets check the maximum and minimum range of the data\n        all_data \= \[\]\n        \# yi is the class name which is the output\,\n        \# yi is \-1 or \+1\n        for yi in self\.data\:  \# to iterate through classes\n            for featureset in self\.data\[yi\]\:  \# to iterate through features for e\.g\. \[1\,7\] is 1 then \[2\,8\] is 2\n                for feature in featureset\:  \# to iterate through points 1\,7\n                    all_data\.append\(feature\)  \# to append them to a list populated with the numbers\n\n        \# Now we can use the max function to know largest value in our data\n        self\.max_feature_value \= max\(all_data\)\n        self\.min_feature_value \= min\(all_data\)\n        \# now since you got these values they will be stored and you can now get ride of matrix\n        all_data \= None\n\n        \# Now recall the picture of the big U shape\, first we take a large steps and the medium and later small once we\n        \# reach to the optimum value we want\n        \# we can also thread or multi\-processed\n        step_size \= \[self\.max_feature_value \* 0\.1\,  \# Big Step\n                     self\.max_feature_value \* 0\.01\,  \# Medium Steps\n                     self\.max_feature_value \* 0\.001\]  \# Small \(expensive\) steps\n\n        \# Support vectors yi\(xi\.w\+b\) \= 1\n        \# for example 1\.01 and so on\, some times with linear kernel it will not work\,\n        b_range_multiple \= 5  \# extremely expensive\,  we don\'t care about b that much\n\n        \# we don\'t need to take as small steps with b as we do with w\n        b_multiple \= 5\n\n        latest_optimum \= self\.max_feature_value \* 10  \# this the largest vector w will be equal to this number\n\n        \# Now we will start the stepping\n\n        for step in step_size\:\n            w \= np\.array\(\[latest_optimum\, latest_optimum\]\)\n            \# we can do this because convex\n            optimized \= False  \# until we run out of our step_size\n            while not optimized\:\n                for b in np\.arange\(\-1\*\(self\.max_feature_value\*b_range_multiple\)\,   \# range from \-80 to 80\n                                       self\.max_feature_value\*b_range_multiple\,\n                                       step\*b_multiple\)\:\n                    for transformation in transforms\:\n                        w_t \= w\*transformation\n                        found_option \= True\n                        \# Here is the weakest link in the SVM fundamentally\n                        \# SMO attempts to fix this a bit\n                        \# But not that much\n                        \# remember the constrain function is\n                        \# yi\(xi\.w\+b\) \&gt;\= 1\n                        \# Try to add a break later\n                        for i in self\.data\:\n                            for xi in self\.data\[i\]\:\n                                yi \= i\n                                if not yi\*\(np\.dot\(w_t\,xi\)\+b\) \&gt;\=1\:   \# I fixed the type here it was i not 1\n                                    found_option \= False\n                                \#print\(xi\,yi\*\(np\.dot\(w_t\,xi\)\+b\)\)\n                                                                    \# I have removed the break it was here\n                        if found_option\:\n                            opt_dict\[np\.linalg\.norm\(w_t\)\]\=\[w_t\,b\]\n\n                if w\[0\] \&lt; 0\:\n                    optimized \= True\n                    print\(\'Optimized a step\.\'\)\n                else\:\n                    \# w \= \[5\,5\]\n                    \# step \=1\n                    \# w\-\[step\,step\] it should be but the one we offer here is correct\n                    w \= w \- step\n\n            norms \= sorted\(\[n for n in opt_dict\]\)\n            \# as you remember \|\|w\|\| \= \[w\,b\]\n            opt_choice \= opt_dict\[norms\[0\]\]\n            self\.w \= opt_choice\[0\]\n            self\.b \= opt_choice\[1\]\n            latest_optimum \= opt_choice\[0\]\[0\]\+step\*2\n\n        for i in self\.data\:\n            for xi in self\.data\[i\]\:\n                yi\=i\n                print\(xi\, \'\:\'\,yi\*\(np\.dot\(self\.w\,xi\)\+self\.b\)\)\n\n\n    \# now we will define a method to make the predication\n    def predict\(self\, features\)\:\n        \# should return the sign of the class\, as sign\(x\.w\+b\)\n        \# you can make a lambda expression for upper than 1 and lower than 1\n        \# or you can simply use the numpy sign function\,\n        classification \= np\.sign\(np\.dot\(np\.array\(features\)\, self\.w\) \+ self\.b\)\n        if classification \!\= 0 and self\.visualization\:\n            self\.ax\.scatter\(features\[0\]\,features\[1\]\, s\=200\, marker\=\'\*\'\, c \= self\.colors\[classification\]\)\n        return classification\n\n    def visualize\(self\)\:\n        \[\[self\.ax\.scatter\(x\[0\]\,x\[1\]\,s\=100\,color\=self\.colors\[i\]\) for x in data_dict\[i\]\] for i in data_dict\]\n\n        \# Hyperplane \= x\.w\+b\n        \# we want v \= x\.w\+b\n        \# Positive support vector PSV \= 1\n        \# Negative support vector NPS \= \-1\n        \# decision hyperplane         \= 0\n        \# here we will see the support the decision hyperplane\n        def hyperplane\(x\,w\,b\,v\)\:\n            return \(\-w\[0\]\*x\-b\+v\)\/w\[1\]\n\n\n        datarange \= \(self\.min_feature_value\*0\.9\,self\.max_feature_value\*1\.1\) \# just to make the points not out of the range\n        hyp_x_min \= datarange\[0\]\n        hyp_x_max \= datarange\[1\]\n        \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\n        \# \(w\.x\+b\) \= 1\n        \# Positive support vector hyperplane\n        psv1 \= hyperplane\(hyp_x_min\,self\.w\,self\.b\,1\)   \# it will be a y so we will use the x to draw the line\n        psv2 \= hyperplane\(hyp_x_max\,self\.w\,self\.b\,1\)\n        self\.ax\.plot\(\[hyp_x_min\,hyp_x_max\]\,\[psv1\,psv2\]\, \'k\'\)  \# now we have the the positive support vector\n        \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\n        \# \(w\.x\+b\) \= \-1\n        \# Negative support vector hyperplane\n        nsv1 \= hyperplane\(hyp_x_min\, self\.w\, self\.b\, \-1\)  \# it will be a y so we will use the x to draw the line\n        nsv2 \= hyperplane\(hyp_x_max\, self\.w\, self\.b\, \-1\)\n        self\.ax\.plot\(\[hyp_x_min\, hyp_x_max\]\, \[nsv1\, nsv2\]\, \'k\'\)  \# now we have the the positive support vector\n        \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\n        \# \(w\.x\+b\) \= 0\n        \# Decision boundary  vector hyperplane\n        db1 \= hyperplane\(hyp_x_min\, self\.w\, self\.b\, 0\)  \# it will be a y so we will use the x to draw the line\n        db2 \= hyperplane\(hyp_x_max\, self\.w\, self\.b\, 0\)\n        self\.ax\.plot\(\[hyp_x_min\, hyp_x_max\]\, \[db1\, db2\]\, \'y\-\-\'\)  \# now we have the the positive support vector\n\n\n        plt\.show\(\)\n\n\# now we will start with simple data and later we will extend\ndata_dict \= \{\-1\: np\.array\(\[\[1\, 7\]\,\n                           \[2\, 8\]\,\n                           \[3\, 8\]\, \]\)\,\n             1\: np\.array\(\[\[5\, 1\]\,\n                          \[6\, \-1\]\,\n                          \[7\, 3\]\,\]\)\}\n\n\n\nsvm \= Support_Vector_Machine\(\)\nsvm\.fit\(data\=data_dict\)\npredict_us \= \[\[0\,10\]\,\n              \[1\,3\]\,\n              \[3\,4\]\,\n              \[3\,5\]\,\n              \[5\,5\]\,\n              \[5\,6\]\,\n              \[6\,\-5\]\,\n              \[5\,8\]\,\]\n\nfor p in predict_us\:\n    svm\.predict\(p\)\nsvm\.visualize\(\)\n</find>
+      <find>matplotlib</find>
+      <find>gen_non_lin_separable_data</find>
+      <find>PRINT</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/[2] Regression with machine leanring.py" />
+        <option value="$PROJECT_DIR$/[3] Regression with machine leanring.py" />
+        <option value="$PROJECT_DIR$/[4] Regression wiht machine learning.py" />
+        <option value="$PROJECT_DIR$/[5] Regression with machine learning predication.py" />
+        <option value="$PROJECT_DIR$/[6] Regression with machine learning pickling.py" />
+        <option value="$PROJECT_DIR$/[8] linear regression P.1.py" />
+        <option value="$PROJECT_DIR$/[9] linear regression P.2.py" />
+        <option value="$PROJECT_DIR$/[11] linear regression P.4.py" />
+        <option value="$PROJECT_DIR$/[12] linear regression P.5.py" />
+        <option value="$PROJECT_DIR$/[13] Classification algorithm K-nearest neighbors.py" />
+        <option value="$PROJECT_DIR$/[14] Classification algorithm K-nearest neighbors.py" />
+        <option value="$PROJECT_DIR$/[16] Writing our own Ks-neighbor algorithm.py" />
+        <option value="$PROJECT_DIR$/[17] Writing our own Ks-neighbor algorithm.py" />
+        <option value="$PROJECT_DIR$/[18] Writing our own Ks-neighbor algorithm:.py" />
+        <option value="$PROJECT_DIR$/[20] Writing our own Ks-neighbor algorithm.py" />
+        <option value="$PROJECT_DIR$/[25] Support Vector Machine.py" />
+        <option value="$PROJECT_DIR$/[26] Support vector machine [Fitting].py" />
+        <option value="$PROJECT_DIR$/[26] Appendix to learn.py" />
+        <option value="$PROJECT_DIR$/[27] Support Vector Machine.py" />
+        <option value="$PROJECT_DIR$/[28] Support Vector Machine.py" />
+        <option value="$PROJECT_DIR$/[29] Kernels Introduction.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/[32] Soft Margin SVM and Kernels with CVXOPT.py" />
+        <option value="$PROJECT_DIR$/[33] SVM Parameters-Practical Machine Learning.py" />
+        <option value="$PROJECT_DIR$/[34] Clustering Introduction-Practical Machine Learning.py" />
+        <option value="$PROJECT_DIR$/[35] Handling Non Numeric Data Practical Machine Learning Tutorial.py" />
+        <option value="$PROJECT_DIR$/[36] k Means with Titanic Dataset - Practical Machine Learning Tutorial.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="22" />
+    <option name="width" value="1440" />
+    <option name="height" value="878" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>Buildout</id>
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>HTML</id>
+          </State>
+          <State>
+            <id>Internationalization</id>
+          </State>
+          <State>
+            <id>JSON and JSON5</id>
+          </State>
+          <State>
+            <id>LaTeX</id>
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+          <State>
+            <id>RegExp</id>
+          </State>
+          <State>
+            <id>XML</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <showMembers ProjectPane="false" />
+      <autoscrollToSource ProjectPane="false" />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Machine_Learning" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Machine_Learning" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="Machine_Learning" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="Machine_Learning" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.[36] k Means with Titanic Dataset - Practical Machine Learning Tutorial">
+    <configuration name="[34] Clustering Introduction-Practical Machine Learning" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Machine_Learning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/[34] Clustering Introduction-Practical Machine Learning.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="[35] Handling Non Numeric Data Practical Machine Learning Tutorial" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Machine_Learning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/[35] Handling Non Numeric Data Practical Machine Learning Tutorial.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="[36] k Means with Titanic Dataset - Practical Machine Learning Tutorial" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Machine_Learning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/[36] k Means with Titanic Dataset - Practical Machine Learning Tutorial.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="[6] Regression with machine learning pickling" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Machine_Learning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/[6] Regression with machine learning pickling.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Machine_Learning" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.[6] Regression with machine learning pickling" />
+      <item itemvalue="Python.[34] Clustering Introduction-Practical Machine Learning" />
+      <item itemvalue="Python.[35] Handling Non Numeric Data Practical Machine Learning Tutorial" />
+      <item itemvalue="Python.[36] k Means with Titanic Dataset - Practical Machine Learning Tutorial" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.[36] k Means with Titanic Dataset - Practical Machine Learning Tutorial" />
+        <item itemvalue="Python.[35] Handling Non Numeric Data Practical Machine Learning Tutorial" />
+        <item itemvalue="Python.[34] Clustering Introduction-Practical Machine Learning" />
+        <item itemvalue="Python.[6] Regression with machine learning pickling" />
+        <item itemvalue="Python.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cdc952df-9136-445d-9946-bfc32b4c1237" name="Default" comment="" />
+      <created>1527839751440</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1527839751440</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="22" width="1440" height="878" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.2496464" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50282884" side_tool="true" weight="0.3287858" />
+      <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TODO" order="3" weight="0.3292683" />
+      <window_info anchor="bottom" id="Python Console" order="4" sideWeight="0.49717113" weight="0.4607046" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" weight="0.3292683" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49717113" weight="0.32791328" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.398374" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.4498645" />
+      <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.3287858" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.2496464" />
+      <window_info id="Structure" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50282884" side_tool="true" weight="0.3287858" />
+      <window_info anchor="bottom" id="Version Control" order="2" show_stripe_button="false" />
+      <window_info anchor="bottom" id="TODO" order="3" />
+      <window_info anchor="bottom" id="Python Console" order="4" weight="0.3287858" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" />
+      <window_info anchor="bottom" id="Run" order="7" sideWeight="0.49717113" weight="0.3287858" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.39972714" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3287858" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/VirtualEnv/lib/python3.6/site-packages/sklearn/cross_validation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VirtualEnv/lib/python3.6/site-packages/sklearn/model_selection/_split.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-244">
+          <caret line="2030" selection-start-line="2030" selection-end-line="2030" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VirtualEnv/lib/python3.6/site-packages/matplotlib/pyplot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="114" selection-start-line="114" selection-end-line="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3.6/secrets.pyi" />
+    <entry file="file://$PROJECT_DIR$/VirtualEnv/lib/python3.6/site-packages/sklearn/linear_model/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="508" selection-start-line="508" selection-end-line="508" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/tkinter/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="556" selection-start-line="556" selection-end-line="556" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/statistics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="306" selection-start-line="306" selection-end-line="306" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VirtualEnv/lib/python3.6/site-packages/matplotlib/artist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="887" selection-start-line="887" selection-end-line="887" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/breast-cancer-wisconsin.data.txt" />
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_bundle/pydev_import_hook.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VirtualEnv/lib/python3.6/collections/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="534" selection-start-line="534" selection-end-line="534" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[17] Writing our own Ks-neighbor algorithm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="35" selection-end-line="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[18] Writing our own Ks-neighbor algorithm:.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[26] Support vector machine [Fitting].py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="77" column="12" selection-end-line="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[26] Appendix to learn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="634">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[29] Kernels Introduction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="1115" selection-start-line="1115" selection-end-line="1115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MacBook_Env/lib/python3.6/site-packages/sklearn/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/importlib/_bootstrap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="218" selection-start-line="218" selection-end-line="218" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[20] Writing our own Ks-neighbor algorithm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="69" column="24" lean-forward="true" selection-end-line="152" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[25] Support Vector Machine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-217">
+          <caret line="28" column="35" lean-forward="true" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[27] Support Vector Machine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2154">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[8] linear regression P.1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="11" column="17" lean-forward="true" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[9] linear regression P.2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="47">
+          <caret line="43" lean-forward="true" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[11] linear regression P.4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[15] Writing our own Ks-neighbor algorithm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="17" selection-start-line="7" selection-end-line="12" selection-end-column="31" />
+          <folding>
+            <element signature="e#195#216#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[16] Writing our own Ks-neighbor algorithm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding>
+            <element signature="e#195#216#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[2] Regression with machine leanring.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[3] Regression with machine leanring.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+          <folding>
+            <element signature="e#167#178#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[4] Regression wiht machine learning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="28" selection-end-line="82" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[5] Regression with machine learning predication.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[14] Classification algorithm K-nearest neighbors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="641">
+          <caret line="50" column="36" selection-start-line="50" selection-start-column="36" selection-end-line="50" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[12] linear regression P.5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="e#1#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Untitled.ipynb" />
+    <entry file="file://$PROJECT_DIR$/Untitled1.ipynb" />
+    <entry file="file://$PROJECT_DIR$/surface3d_frontpage.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[28] Support Vector Machine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="188" lean-forward="true" selection-start-line="188" selection-end-line="188" />
+          <folding>
+            <element signature="e#46#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linearregression.pickle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/breast-cancer-wisconsin.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5549" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[6] Regression with machine learning pickling.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-395">
+          <caret line="74" column="15" lean-forward="true" selection-start-line="74" selection-start-column="15" selection-end-line="74" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[33] SVM Parameters-Practical Machine Learning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="41" column="25" lean-forward="true" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+          <folding>
+            <element signature="e#953#971#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[32] Soft Margin SVM and Kernels with CVXOPT.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="26" column="19" lean-forward="true" selection-start-line="16" selection-end-line="26" selection-end-column="19" />
+          <folding>
+            <element signature="e#644#662#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MacBook_Env/lib/python3.6/site-packages/matplotlib/artist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="887" selection-start-line="887" selection-end-line="887" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MacBook_Env/lib/python3.6/site-packages/sklearn/cluster/k_means_.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12094">
+          <caret line="886" selection-start-line="886" selection-end-line="886" />
+          <folding>
+            <element signature="e#514#529#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[34] Clustering Introduction-Practical Machine Learning.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="77" column="10" lean-forward="true" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MacBook_Env/lib/python3.6/site-packages/pandas/io/excel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="351" selection-start-line="351" selection-end-line="351" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MacBook_Env/lib/python3.6/site-packages/pandas/core/generic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="1575" selection-start-line="1575" selection-end-line="1575" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[35] Handling Non Numeric Data Practical Machine Learning Tutorial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
+          <folding>
+            <marker date="1534792615831" expanded="true" signature="3080:3085" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/[36] k Means with Titanic Dataset - Practical Machine Learning Tutorial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2816">
+          <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
