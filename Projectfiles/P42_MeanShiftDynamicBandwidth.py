@@ -34,7 +34,7 @@ from sklearn.datasets.samples_generator import make_blobs
 
 style.use('ggplot')
 
-X, y = make_blobs(n_samples=15, centers=3, n_features=2)
+X, y = make_blobs(n_samples=100, centers=3, n_features=2)
 ##X = np.array([[1, 2],
 ##              [1.5, 1.8],
 ##              [5, 8],
