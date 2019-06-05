@@ -22,8 +22,6 @@ python ~/3_PracticalMachineLearning/Projectfiles/P47_XXX.py
 We will continue form P.46 and here we go.
 
 
-
-
 ![](./output_images/P47-1.png)
 ## Acknowledgments
 * Based on sentdex Lectures, modified to serve the purpose that I need in my academic research.
