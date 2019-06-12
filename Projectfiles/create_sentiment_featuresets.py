@@ -39,11 +39,11 @@ def sample_handling(sample, lexicon, classification):
         contents = f.readlines()
         for l in contents[:hm_lines]:
             current_words = word_tokenize(l.lower())
-            current_words = [lemmaitizer.lemmatize(i) for i in current_words]
+            current_words = [lemmatizer.lemmatize(i) for i in current_words]
             features = np.zeros(len(lexicon))
             for word in current_words:
                 if word.lower() in lexicon:
-                    index_value = lexcion.index(word.lower())
+                    index_value = lexicon.index(word.lower())
                     features[index_value] +=1
             features = list(features)
             featureset.append([features, classification])
@@ -67,5 +67,14 @@ def create_feature_sets_and_labels(pos, neg, test_size= 0.1):
     features += sample_handling(POSITIVE_DIR, lexicon,[1,0])
     features += sample_handling(NEGATIVE_DIR, lexicon,[0,1])
     random.shuffle(features)
+
+    features = np.array(features)
+
+    testing_size = int(test_size*len(features))
+
+    train_x = list(features[:,0])
+
+
+
 
 
