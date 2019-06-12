@@ -1,3 +1,4 @@
 Gh1Py37Anconda
 *.json
 *.code-workspace
+*.pickle
