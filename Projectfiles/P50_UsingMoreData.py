@@ -51,8 +51,8 @@ def init_process(fin,fout):
 			print(str(e))
 	outfile.close()
 
-init_process(os.path.join(DATASET_DIR,'training.1600000.processed.noemoticon.csv') ,os.path.join(DATA_EXPORT,'train_set.csv'))
-init_process(os.path.join(DATASET_DIR,'testdata.manual.2009.06.14.csv') ,os.path.join(DATA_EXPORT,'test_set.csv'))
+#init_process(os.path.join(DATASET_DIR,'training.1600000.processed.noemoticon.csv') ,os.path.join(DATA_EXPORT,'train_set.csv'))
+#init_process(os.path.join(DATASET_DIR,'testdata.manual.2009.06.14.csv') ,os.path.join(DATA_EXPORT,'test_set.csv'))
 #init_process('testdata.manual.2009.06.14.csv','test_set.csv')
 
 
@@ -78,7 +78,7 @@ def create_lexicon(fin):
 	with open('lexicon-2500-2638.pickle','wb') as f:
 		pickle.dump(lexicon,f)
 
-create_lexicon(os.path.join(DATA_EXPORT,'train_set.csv')) # reading a file as an input
+#create_lexicon(os.path.join(DATA_EXPORT,'train_set.csv')) # reading a file as an input
 #create_lexicon('train_set.csv')
 
 
@@ -109,9 +109,9 @@ def convert_to_vec(fin,fout,lexicon_pickle):  # fin: file input, fout: file outp
 
 		print(counter)
 
-convert_to_vec(os.path.join(DATA_EXPORT,'train_set.csv'),
-			   os.path.join(DATA_EXPORT,'processed-test-set.csv'),
-			   os.path.join(DATA_EXPORT,'lexicon-2500-2638.pickle'))
+# convert_to_vec(os.path.join(DATA_EXPORT,'train_set.csv'),
+# 			   os.path.join(DATA_EXPORT,'processed-test-set.csv'),
+# 			   os.path.join(DATA_EXPORT,'lexicon-2500-2638.pickle'))
 
 
 def shuffle_data(fin):
@@ -120,7 +120,7 @@ def shuffle_data(fin):
 	print(df.head())
 	df.to_csv('train_set_shuffled.csv', index=False)
 
-shuffle_data(os.path.join(DATA_EXPORT,'train_set.csv'))
+#shuffle_data(os.path.join(DATA_EXPORT,'train_set.csv'))
 
 
 def create_test_data_pickle(fin):
@@ -143,4 +143,5 @@ def create_test_data_pickle(fin):
 	feature_sets = np.array(feature_sets)
 	labels = np.array(labels)
 
-create_test_data_pickle(os.path.join(DATA_EXPORT,'processed-test-set.csv'))
+#create_test_data_pickle(os.path.join(DATA_EXPORT,'processed-test-set.csv'))
+print(os.path.join(DATA_EXPORT,'processed-test-set.csv'))
