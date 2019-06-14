@@ -78,7 +78,7 @@ def train_neural_network(x):
 	optimizer = tf.train.AdamOptimizer(learning_rate=0.001).minimize(cost)
 
 	with tf.Session() as sess:
-		sess.run(tf.initialize_all_variables())
+		sess.run(tf.global_variables_initializer()) # Before it was tf.initialize_all_variables()
 
 		for epoch in range(hm_epochs):
 			epoch_loss = 0
