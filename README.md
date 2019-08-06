@@ -2,7 +2,7 @@
 ## Starting Point for this project.
 Starting here from Mean Shift Into.-Practical Machine Learning Tutorial with python p.39.
 
-## - Lessons Progress
+## - Machine Learning Advanced Topics
 Here will continue our Machine-Learning Class that we we have already developed in the past. The programs here support Machine Learning with several methods such as:
 ### Machine learning Methods
 * K-Means
@@ -10,6 +10,7 @@ Here will continue our Machine-Learning Class that we we have already developed 
 * Support Vector machine
 * Mean Shift
 
+![](./resources/images/IMG_0356.PNG)
 
 #
 ## Authors
