@@ -15,12 +15,10 @@
 
 # We will use we chose the California Housing Prices dataset from the StatLib repository
 
-
 '''
         Welcome to Machine Learning Housing Corporation! The first task you are asked to perform is to build a model of housing prices in California using the California cen‐ sus data. This data has metrics such as the population, median income, median housing price, and so on for each block group in California. Block groups are the smallest geographical unit for which the US Census Bureau publishes sample data (a block group typically has a population of 600 to 3,000 people). We will just call them “districts” for short.
         Your model should learn from this data and be able to predict the median housing price in any district, given all the other metrics.
 '''
-
 
 # Step 2
 
@@ -123,3 +121,4 @@ if __name__ == "__main__":
     print(f"The size of training set is = {len(train_set)} and the size of test set is = {len(test_set)}")
     #ensure_our_dataset_no_repetition(housing)
     spliting_another_method_from_sklearn(housing)
+    # 56 | Chapter 2: End-to-End Machine Learning Project
