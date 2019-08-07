@@ -29,14 +29,17 @@
         Have you found the answers? Let’s see: it is clearly a typical supervised learning task since you are given labeled training examples (each instance comes with the expected output, i.e., the district’s median housing price). Moreover, it is also a typical regres‐ sion task, since you are asked to predict a value. More specifically, this is a multiple regression problem since the system will use multiple features to make a prediction (it will use the district’s population, the median income, etc.). It is also a univariate regression problem since we are only trying to predict a single value for each district. If we were trying to predict multiple values per district, it would be a multivariate regression problem. Finally, there is no continuous flow of data coming in the system, there is no particular need to adjust to changing data rapidly, and the data is small enough to fit in memory, so plain batch learning should do just fine.
 '''
 
-
 import os
 import tarfile
 from six.moves import urllib
 
-DOWNLOAD_ROOT = 'http://raw.githubusercontent.com/ageron/handson-m12/master/'
-HOUSING_PATH  = os.path.join("datasets","housing")
-HOUSING_URL   = DOWNLOAD_ROOT + "datasets/housing/housing.tgz"
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+DOWNLOAD_ROOT = "https://raw.githubusercontent.com/ageron/handson-ml2/master/"
+HOUSING_PATH = os.path.join("datasets", "housing")
+HOUSING_URL = DOWNLOAD_ROOT + "datasets/housing/housing.tgz"
 
 def fetch_housing_data(housing_url=HOUSING_URL, housing_path=HOUSING_PATH):
     if not os.path.isdir(housing_path):
@@ -44,6 +47,39 @@ def fetch_housing_data(housing_url=HOUSING_URL, housing_path=HOUSING_PATH):
     tgz_path = os.path.join(housing_path, "housing.tgz")
     urllib.request.urlretrieve(housing_url, tgz_path)
     housing_tgz = tarfile.open(tgz_path)
-    housing_tgz.extractall(path=housing_path)
+    housing_tgz.extractall(path = housing_path)
     housing_tgz.close()
+
+import pandas as pd
+
+def load_housing_data(housing_path = HOUSING_PATH):
+    csv_path = os.path.join(housing_path, "housing.csv")
+    return pd.read_csv(csv_path)
+
+
+def Housing_hist():
+    housing.hist(bins=50, figsize=(20,15))
+    plt.show()
+
+
+# Create a Test Set
+def split_train_test(data,test_ratio):
+    shuffled_indices = np.random.permutation(len(data))
+    test_set_size    = int(len(data) * test_ratio)
+    test_indices     = shuffled_indices[:test_set_size]
+    train_indices    = shuffled_indices[test_set_size:]
+    return data.iloc[train_indices], data.iloc[test_indices]
+
+
+
+if __name__ == "__main__":
+    fetch_housing_data()
+    housing = load_housing_data()
+    #print(housing.head())
+    #print(housing.info())
+    #print(housing['ocean_proximity'].value_counts())
+    #Housing_hist()
+    train_set, test_set = split_train_test(housing, 0.2)
+    print(f"The size of training set is = {len(train_set)} and the size of test set is = {len(test_set)}")
+
 
