@@ -11,18 +11,21 @@ CURRENT_DIR = os.getcwd()
 import gym
 import random
 import numpy as np
+
 import tflearn
 from tflearn.layers.core import input_data, dropout, fully_connected
 from tflearn.layers.estimator import regression
 from statistics import median, mean
 from collections import Counter
 
+
+
 LR = 1e-3
 env = gym.make("CartPole-v0")
 env.reset()
 goal_steps = 500
-score_requirement = 50
-initial_games = 10000
+score_requirement = 50  # All the randoms games with 50 or greater.
+initial_games = 100
 
 
 def some_random_games_first():
@@ -47,7 +50,6 @@ def some_random_games_first():
             if done:
                 break
 
-some_random_games_first()
 
 
 def initial_population():
@@ -151,3 +153,14 @@ def train_model(training_data, model=False):
 
     model.fit({'input': X}, {'targets': y}, n_epoch=5, snapshot_step=500, show_metric=True, run_id='openai_learning')
     return model
+
+
+
+
+if __name__ == '__main__':
+    some_random_games_first()
+    initial_population()
+    neural_network_model(100)
+
+
+
