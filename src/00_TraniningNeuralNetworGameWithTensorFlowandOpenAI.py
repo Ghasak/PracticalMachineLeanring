@@ -11,7 +11,7 @@ CURRENT_DIR = os.getcwd()
 print(CURRENT_DIR)
 
 import gym
-env = gym.make("MountainCarContinuous-v0")
+env = gym.make("CartPole-v1")
 observation = env.reset()
 for _ in range(1000):
   env.render()
