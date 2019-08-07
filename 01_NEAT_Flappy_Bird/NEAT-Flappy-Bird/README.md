@@ -26,3 +26,8 @@ pip install -r requirments.txt
 python flappy_bird.py
 ```
 
+## INFORMATION
+
+NEAT-Python Modular: https://neat-python.readthedocs.io/en...
+Original NEAT Paper: http://nn.cs.utexas.edu/downloads/pap...
+
