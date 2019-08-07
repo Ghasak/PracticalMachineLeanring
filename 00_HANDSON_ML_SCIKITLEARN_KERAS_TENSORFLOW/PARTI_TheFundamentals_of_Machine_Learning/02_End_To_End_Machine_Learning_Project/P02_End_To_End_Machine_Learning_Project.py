@@ -21,3 +21,29 @@
         Your model should learn from this data and be able to predict the median housing price in any district, given all the other metrics.
 '''
 
+
+# Step 2
+
+'''
+        Okay, with all this information you are now ready to start designing your system. First, you need to frame the problem: is it supervised, unsupervised, or Reinforce‐ ment Learning? Is it a classification task, a regression task, or something else? Should you use batch learning or online learning techniques? Before you read on, pause and try to answer these questions for yourself.
+        Have you found the answers? Let’s see: it is clearly a typical supervised learning task since you are given labeled training examples (each instance comes with the expected output, i.e., the district’s median housing price). Moreover, it is also a typical regres‐ sion task, since you are asked to predict a value. More specifically, this is a multiple regression problem since the system will use multiple features to make a prediction (it will use the district’s population, the median income, etc.). It is also a univariate regression problem since we are only trying to predict a single value for each district. If we were trying to predict multiple values per district, it would be a multivariate regression problem. Finally, there is no continuous flow of data coming in the system, there is no particular need to adjust to changing data rapidly, and the data is small enough to fit in memory, so plain batch learning should do just fine.
+'''
+
+
+import os
+import tarfile
+from six.moves import urllib
+
+DOWNLOAD_ROOT = 'http://raw.githubusercontent.com/ageron/handson-m12/master/'
+HOUSING_PATH  = os.path.join("datasets","housing")
+HOUSING_URL   = DOWNLOAD_ROOT + "datasets/housing/housing.tgz"
+
+def fetch_housing_data(housing_url=HOUSING_URL, housing_path=HOUSING_PATH):
+    if not os.path.isdir(housing_path):
+        os.makedirs(housing_path)
+    tgz_path = os.path.join(housing_path, "housing.tgz")
+    urllib.request.urlretrieve(housing_url, tgz_path)
+    housing_tgz = tarfile.open(tgz_path)
+    housing_tgz.extractall(path=housing_path)
+    housing_tgz.close()
+
