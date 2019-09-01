@@ -34,6 +34,14 @@ class Chapter1():
         # declare two symbolic floating-point scalars
         a = tensor.dscalar()
         b = tensor.dscalar()
+        session_info("").addTextOnly("Create a simple symolic expression")
+        c = a + b
+        print(c)
+        session_info("").addTextOnly("convert the expression into a callable object that takes (a,b) and computes c")
+        f = theano.function([a,b],c)
+        session_info("").addTextOnly("bind 1.5 to 'a' , 2.5 to 'b', and evaluate 'c'")
+        result = f(1.5, 2.5)
+        print(result)
 
 
 
