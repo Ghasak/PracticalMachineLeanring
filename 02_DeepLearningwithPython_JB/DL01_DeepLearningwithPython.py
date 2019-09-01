@@ -23,8 +23,8 @@ from GTools.NiceOutPutClass import session_info
 
 
 
-class Chapter1():
-    session_info("Chapter - 1 - Background").add_line()
+class Chapter2():
+    session_info("Chapter - 2 - Background").add_line()
 
     def SimpleTheanoExample():
         # Example of Theano library
@@ -43,6 +43,33 @@ class Chapter1():
         result = f(1.5, 2.5)
         print(result)
 
+class Chapter3():
+    session_info("Chapter - 1 - Background").add_line()
+    """python -c "import tensorflow as tf; print(tf.__version__)" ---> 1.13.1"""
+
+    def SimpleTensorFlowExample():
+        session_info("").addTextOnly("Example of TensorFlow library")
+        import tensorflow as tf
+        session_info("").addTextOnly("declare two symoblic floating-point scalrs")
+
+        a = tf.placeholder(tf.float32)
+        b = tf.placeholder(tf.float32)
+
+        session_info("").addTextOnly("create a simple symplic expression using the add function")
+        add = tf.add(a,b)
+        session_info("").addTextOnly("bind 1.5 to 'a' , 2.5 to 'b' and evaluate 'c'")
+        sess = tf.Session()
+        binding = {a: 1.5, b: 2.5}
+        c = sess.run(add,feed_dict= binding)
+        print(c)
+
+    def printInstallDirectoryforTensorFlow():
+        import os
+        import inspect
+        import tensorflow as tf
+        print(os.path.dirname())
+
+
 
 
 
@@ -50,7 +77,8 @@ class Chapter1():
 def main():
     output1 = session_info(messagex)
     output1.Initial_run()
-    Chapter1.SimpleTheanoExample()
+    Chapter2.SimpleTheanoExample()
+    Chapter3.SimpleTensorFlowExample()
 
 
 
