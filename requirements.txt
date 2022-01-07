@@ -11,7 +11,7 @@ black==19.3b0
 cffi==1.12.3
 Click==7.0
 cloudpickle==1.2.1
-cvxopt==1.2.3
+cvxopt==1.2.7
 cycler==0.10.0
 Cython==0.29.13
 decorator==4.4.0
